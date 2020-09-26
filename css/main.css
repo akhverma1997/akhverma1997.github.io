@@ -1074,7 +1074,7 @@ header .top-bar {
 header .logo {
 	float: left;
 	margin-left: 20px;
-	margin-right: 50px;
+	margin-right: 20px;
 	margin-top: 25px;
 	position: relative;
 }
@@ -1085,8 +1085,8 @@ header .logo a {
 	border: none;
 	text-shadow: none;
 	color: #ffff;
-	width: 190px;
-	height: 15px;
+	width: fit-content;
+	height: inherit;
 	font-size: x-large;
 	font-family: 'Lato', sans-serif;
 }
@@ -1251,6 +1251,7 @@ header .logo a {
 @media only screen and (max-width:400px) {
 	header .top-bar {
 		left: 25px;
+		right: 25px;
 	}
 }
 
