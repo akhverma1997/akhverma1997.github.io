@@ -1,0 +1,79 @@
+/* Responsive, dual-mode navigation: horizontal on desktop, drawer on mobile */
+/* Override theme header offsets and background to match row container */
+header .top-bar { left: 0 !important; right: 0 !important; position: relative !important; width: 100% !important; }
+
+
+/* Base header */
+header { position: sticky; top: 0; z-index: 1000; }
+.top-bar { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+.top-bar .logo a { text-decoration: none; font-weight: 600; }
+/* Match .row container max width and center */
+header .row { max-width: 1200px; margin: 0 auto; padding: 0 24px; min-height: 66px; }
+
+/* Ensure row background matches top bar color */
+header .row { background: #0b1b24; }
+
+/* Override theme floats/margins for logo so it aligns horizontally */
+header .logo { float: none !important; margin: 0 !important; display: flex; align-items: center; }
+header .logo a { display: inline-flex !important; }
+
+/* Ensure desktop nav overrides theme dropdown styles */
+@media (min-width: 901px) {
+  #main-nav-wrap { position: static !important; top: auto !important; left: auto !important; width: auto !important; }
+  .main-navigation { background: transparent !important; padding: 0 !important; height: auto !important; display: flex !important; }
+  .main-navigation > li { display: inline-block !important; }
+  .main-navigation li a { display: inline-block !important; padding: 0 !important; }
+}
+
+
+/* Color theme: keep site dark, give nav a dark-slate banner for contrast */
+.top-bar { background: #0b1b24; }
+.logo a { color: #f7f9fc !important; }
+.main-navigation li a { color: #e6eef2; }
+.main-navigation li a:hover { color: #14b8a6; }
+.main-navigation li.current > a { color: #14b8a6 !important; }
+
+/* Desktop alignment: logo and tabs grouped to the left, larger font size */
+@media (min-width: 901px) {
+  .top-bar { justify-content: flex-start; align-items: center; gap: 28px; }
+  .top-bar .logo { margin-right: 28px; }
+  .top-bar .logo a { font-size: 1.5rem; letter-spacing: 0.5px; }
+  /* ensure nav sits on the same row and uses flex layout */
+  #main-nav-wrap { position: static !important; display: block !important; }
+  .main-navigation { display: flex !important; align-items: center; gap: 36px; margin: 0; padding: 0; }
+  .main-navigation li { display: inline-block; }
+  .main-navigation li a { font-size: 1.5rem; font-weight: 600; }
+}
+
+/* Desktop layout */
+/* Center logo on mobile by reducing left margin from theme */
+@media (max-width: 600px) {
+  header .top-bar { left: 0 !important; right: 0 !important;}
+  .top-bar .logo { margin-left: 0; padding: 10px 20px 10px 0;}
+  .top-bar .logo a { margin-left: 0; }
+  .menu-toggle { margin-top: 0;}
+}
+
+.menu-toggle { display: none; }
+#main-nav-wrap { display: block; }
+.main-navigation { display: flex; align-items: center; gap: 28px; background: transparent; padding: 0; margin: 0; }
+.main-navigation li { display: inline-block; }
+.main-navigation li a { padding: 6px 0; }
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .menu-toggle { display: inline-block; color: #f7f9fc; text-transform: uppercase;}
+  #main-nav-wrap { position: absolute; right: 0; top: 100%; width: 280px; padding: 12px 0; background: rgba(11,27,36,0.97); border-radius: 0 0 0 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  #main-nav-wrap .main-navigation { display: block; }
+  #main-nav-wrap .main-navigation li { display: block; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  #main-nav-wrap .main-navigation li a { display: block; padding: 14px 18px; }
+  #main-nav-wrap:not(.open) { display: none; }
+
+  /* Hamburger to X animation (theme supports .is-clicked) */
+  .menu-toggle span { display: inline-block; }
+
+  /* Slide-in animation */
+  #main-nav-wrap { transform: translateY(-10px); opacity: 0; transition: transform .25s ease, opacity .25s ease; }
+  #main-nav-wrap.open { transform: translateY(0); opacity: 1; }
+}
+

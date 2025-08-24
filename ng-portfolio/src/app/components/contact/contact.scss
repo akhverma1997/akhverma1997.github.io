@@ -1,0 +1,53 @@
+/* Contact form styles */
+.alert {
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.submitform:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.s-loader {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.s-loader > div {
+  width: 8px;
+  height: 8px;
+  background-color: #1E90FF;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.s-loader .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.s-loader .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+  } 40% {
+    transform: scale(1.0);
+  }
+}

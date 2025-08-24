@@ -1,0 +1,89 @@
+/* Portfolio modal styles */
+.popup-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popup-modal {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  position: relative;
+}
+
+.popup-modal .media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.popup-modal .description-box {
+  padding: 30px;
+}
+
+.popup-modal .description-box h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.popup-modal .description-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.popup-modal .categories {
+  font-weight: bold;
+  color: #1E90FF;
+  margin-bottom: 20px;
+}
+
+.popup-modal .link-box {
+  padding: 0 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .popup-modal .link-box { flex-wrap: nowrap; }
+}
+
+.popup-modal .link-box a {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  background: #1E90FF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+/* Add top margin to modal button row for better spacing on laptops */
+.popup-modal .link-box { margin-top: 10px; }
+@media (min-width: 1024px) { .popup-modal .link-box { margin-top: 14px; } }
+
+.popup-modal .link-box a:hover {
+  background: #0066cc;
+}
+
+.popup-modal .link-box .popup-modal-dismiss {
+  background: #666;
+}
+
+.popup-modal .link-box .popup-modal-dismiss:hover {
+  background: #444;
+}

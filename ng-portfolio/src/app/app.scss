@@ -1,0 +1,27 @@
+
+/* Global responsive tweaks to complement theme CSS */
+html { scroll-behavior: smooth; }
+
+/* Ensure images scale down nicely */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Grid/tile helpers on small screens */
+@media (max-width: 1024px) {
+  .col-six { width: 100% !important; }
+  .col-four { width: 100% !important; }
+  .col-eight { width: 100% !important; }
+}
+
+/* Stack portfolio tiles cleanly on phones */
+@media (max-width: 768px) {
+  #folio-wrapper.block-1-2 .bgrid { width: 100% !important; }
+  .services-list.block-1-3 .bgrid { width: 100% !important; }
+}
+
+/* Tighter paddings and font scaling on small devices */
+@media (max-width: 480px) {
+  h1, .h01 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  .lead { font-size: 1rem !important; }
+  section { padding-left: 14px; padding-right: 14px; }
+}

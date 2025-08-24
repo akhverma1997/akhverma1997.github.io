@@ -1,0 +1,22 @@
+<header>
+  <div class="row">
+    <div class="top-bar">
+      <a class="menu-toggle" href="#" [class.is-clicked]="menuOpen()" (click)="toggleMenu($event)"><span>Menu</span></a>
+      <div class="logo">
+        <a routerLink="/">AKHIL VERMA</a>
+      </div>
+      <nav id="main-nav-wrap" [class.open]="menuOpen()">
+        <ul class="main-navigation">
+          <li [class.current]="activeSection === 'intro'"><a class="smoothscroll" href="#intro" title="" (click)="scrollTo('intro', $event)">Home</a></li>
+          <li [class.current]="activeSection === 'about'"><a class="smoothscroll" href="#about" title="" (click)="scrollTo('about', $event)">About</a></li>
+          <li [class.current]="activeSection === 'resume'"><a class="smoothscroll" href="#resume" title="" (click)="scrollTo('resume', $event)">Resume</a></li>
+          <li [class.current]="activeSection === 'portfolio'"><a class="smoothscroll" href="#portfolio" title="" (click)="scrollTo('portfolio', $event)">Portfolio</a></li>
+          <li [class.current]="activeSection === 'cta'"><a class="smoothscroll" href="#cta" title="" (click)="scrollTo('cta', $event)">Positions of Responsibility</a></li>
+          <li [class.current]="activeSection === 'services'"><a class="smoothscroll" href="#services" title="" (click)="scrollTo('services', $event)">Services</a></li>
+          <li [class.current]="activeSection === 'contact'"><a class="smoothscroll" href="#contact" title="" (click)="scrollTo('contact', $event)">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
